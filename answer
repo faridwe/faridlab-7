@@ -1,0 +1,37 @@
+public class Person {
+    private String name;
+    private int age;
+    private String address;
+    private int year_of_birth;
+
+    public Person(String name, int age, String address, int year_of_birth) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.year_of_birth = year_of_birth;
+    }
+
+    public void growOld(int years) {
+        this.age += years;
+    }
+
+    public void beYounger() {
+        this.age -= 1;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{name='" + name + "', age=" + age + ", address='" + address + "', year_of_birth=" + year_of_birth + '}';
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person("John", 25, "123 Main St", 1998);
+        System.out.println(person);
+        
+        person.growOld(10);
+        System.out.println("After growing old by 10 years: " + person);
+
+        person.beYounger();
+        System.out.println("After being younger by 1 year: " + person);
+    }
+}
